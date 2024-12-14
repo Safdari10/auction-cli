@@ -1,19 +1,16 @@
 const mongoose = require('mongoose');
 const AuctionItem = require('./models/auctionItem');
 
-// Connect to MongoDB
-const connectDB = async () => {
-    // connection URI
+ // connection URI
     const uri = 'mongodb://localhost:27017/auction';
 
+// Seed data into MongoDB
+const seedData = async () => {
     try {
-        await mongoose.connect(uri)
-        console.log('MongoDB Connected...')
-    } catch (err) {
-        console.error(err.message)
-        process.exit(1)
+     await mongoose.connect(uri)
+    } catch (error) {
+    
+    } finally {
+        await mongoose.disconnect()
     }
-
 }
-
-
