@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const { Command } = require("commander");
-const { seeDataIntoDB, deleteDataFromDB } = require("./seed");
+const { seedDataIntoDB, deleteDataFromDB } = require("./seed");
 
 const program = new Command();
 
@@ -15,7 +15,7 @@ program
   .description("Seed data into MongoDB")
   .action(async () => {
     try {
-      await seeDataIntoDB();
+      await seedDataIntoDB();
       console.log("Seed operation completed successfully");
     } catch (error) {
       console.error("Error during seed operation", error);
