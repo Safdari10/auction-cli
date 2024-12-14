@@ -31,3 +31,5 @@ program
                 console.error("Error during delete operation", error)
             } 
         })    
+
+program.parse( process.argv )
