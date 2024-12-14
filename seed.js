@@ -26,7 +26,21 @@ const seedDataIntoDB = async () => {
 }
 
 // delete data from MongoDB
-const deleteDataFromDB = async () => {}
+const deleteDataFromDB = async () => {
+    try {
+        await mongoose.connect(uri)
+        console.log("Connected to MongoDB")
+
+        await AuctionItem.deleteMany({})
+        console.log("All auction items deleted")
+
+    } catch (error) {
+        console.error("Error deleting data:", error)
+    } finally {
+        await mongoose.disconnect()
+        console.log("Disconnected from MongoDB")
+    }
+}
 
 
 module.exports = seedDataIntoDB;
