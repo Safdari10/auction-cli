@@ -1,11 +1,12 @@
 const mongoose = require('mongoose');
 const AuctionItem = require('./models/auctionItem');
+const seedData = require('./seedData');
 
  // connection URI
     const uri = 'mongodb://localhost:27017/auction';
 
 // Seed data into MongoDB
-const seedData = async () => {
+const seedDataIntoDB = async () => {
     try {
      await mongoose.connect(uri)
      console.log("Connected to MongoDB")
@@ -13,7 +14,7 @@ const seedData = async () => {
      await AuctionItem.deleteMany({})
      console.log("Cleared existing auction items")
 
-     await AuctionItem.insertMany()
+     await AuctionItem.insertMany(seedData)
      console.log("Seed data inserted scuccessfully")
 
     } catch (error) {
