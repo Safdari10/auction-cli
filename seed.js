@@ -25,4 +25,8 @@ const seedDataIntoDB = async () => {
     }
 }
 
+// delete data from MongoDB
+const deleteDataFromDB = async () => {}
+
+
 module.exports = seedDataIntoDB;
