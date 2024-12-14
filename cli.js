@@ -1,16 +1,39 @@
-const mongoose = require('mongoose');
+#!/usr/bin/env node
 
-// Connect to MongoDB
-const connectDB = async () => {
-    // connection URI
-    const uri = 'mongodb://localhost:27017/auction';
+const { Command } = require("commander");
+const { seedDataIntoDB, deleteDataFromDB } = require("./seed");
 
+const program = new Command();
+
+program
+  .name("Auction CLI")
+  .description("CLI tool to manage auction items in MongoDB")
+  .version("1.0.0");
+
+program
+  .command("seed")
+  .description("Seed data into MongoDB")
+  .action(async () => {
     try {
-        await mongoose.connect(uri)
-        console.log('MongoDB Connected...')
-    } catch (err) {
-        console.error(err.message)
-        process.exit(1)
+      await seedDataIntoDB();
+      console.log("Seed operation completed successfully");
+    } catch (error) {
+      console.error("Error during seed operation", error);
+      process.exit(1);
     }
+  });
 
-}
+program
+  .command("delete")
+  .description("Delete data from MongoDB")
+  .action(async () => {
+    try {
+      await deleteDataFromDB();
+      console.log("Delete operation completed successfully");
+    } catch (error) {
+      console.error("Error during delete operation", error);
+      process.exit(1);
+    }
+  });
+
+program.parse(process.argv);
