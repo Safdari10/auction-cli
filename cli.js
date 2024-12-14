@@ -20,4 +20,14 @@ program
         } 
     })
 
-    
+program
+       .command( "delete" )
+        .description( "Delete data from MongoDB" )
+        .action(async () => {
+            try {
+                await deleteDataFromDB()
+                console.log("Delete operation completed successfully")
+            } catch (error) {
+                console.error("Error during delete operation", error)
+            } 
+        })    
