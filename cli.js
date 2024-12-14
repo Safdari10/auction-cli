@@ -19,6 +19,7 @@ program
       console.log("Seed operation completed successfully");
     } catch (error) {
       console.error("Error during seed operation", error);
+      process.exit(1);
     }
   });
 
@@ -31,6 +32,7 @@ program
       console.log("Delete operation completed successfully");
     } catch (error) {
       console.error("Error during delete operation", error);
+      process.exit(1);
     }
   });
 
