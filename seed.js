@@ -24,3 +24,5 @@ const seedDataIntoDB = async () => {
         console.log("Disconnected from MongoDB")
     }
 }
+
+module.exports = seedDataIntoDB;
