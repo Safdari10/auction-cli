@@ -1,0 +1,32 @@
+[
+    {
+        "title": "Vintage Clock",
+        "description": "A beautiful vintage clock from the 19th century.",
+        "start_price": 100,
+        "reserve_price": 500
+    },
+    {
+        "title": "Antique Vase",
+        "description": "An exquisite antique vase with intricate designs.",
+        "start_price": 200,
+        "reserve_price": 1000
+    },
+    {
+        "title": "Classic Car",
+        "description": "A well-maintained classic car from the 1960s.",
+        "start_price": 5000,
+        "reserve_price": 20000
+    },
+    {
+        "title": "Rare Book",
+        "description": "A rare first edition book from a famous author.",
+        "start_price": 300,
+        "reserve_price": 1500
+    },
+    {
+        "title": "Painting",
+        "description": "A beautiful painting by a renowned artist.",
+        "start_price": 1000,
+        "reserve_price": 5000
+    }
+]
