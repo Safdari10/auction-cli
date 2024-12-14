@@ -1,3 +1,5 @@
+#!/usr/bin/env node 
+
 const Command = require('commander');
 const { seeDataIntoDB, deleteDataFromDB } = require("./seed") 
 
