@@ -8,9 +8,18 @@ const AuctionItem = require('./models/auctionItem');
 const seedData = async () => {
     try {
      await mongoose.connect(uri)
+     console.log("Connected to MongoDB")
+
+     await AuctionItem.deleteMany({})
+     console.log("Cleared existing auction items")
+
+     await AuctionItem.insertMany()
+     console.log("Seed data inserted scuccessfully")
+
     } catch (error) {
-    
+        console.error("Error seeding data:", error)
     } finally {
         await mongoose.disconnect()
+        console.log("Disconnected from MongoDB")
     }
 }
