@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const AuctionItem = require("./src/models/auctionItem");
 const seedData = require("./src/data/seedData");
+const dotenv = require("dotenv");
 dotenv.config();
 
 // connection URI
