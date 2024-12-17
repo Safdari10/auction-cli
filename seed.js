@@ -1,9 +1,10 @@
 const mongoose = require("mongoose");
 const AuctionItem = require("./src/models/auctionItem");
 const seedData = require("./src/data/seedData");
+dotenv.config();
 
 // connection URI
-const uri = "mongodb://localhost:27017/auction";
+const uri = process.env.MONGO_URI;
 
 // Seed data into MongoDB
 const seedDataIntoDB = async () => {
